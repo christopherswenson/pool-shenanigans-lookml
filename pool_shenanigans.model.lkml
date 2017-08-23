@@ -45,10 +45,14 @@ explore: shot {
     sql_on: ${shot.id} = ${ballremaining.shot_id} ;;
   }
 
-  join: ballremainingball {
-    from: ball
+  join: ball {
     relationship: one_to_many
-    sql_on: ${ballremainingball.id} = ${ballremaining.ball_id} ;;
+    sql_on: ${ball.id} = ${ballremaining.ball_id} ;;
+  }
+
+  join: game {
+    relationship: many_to_one
+    sql_on: ${game.id} = ${turn.game_id} ;;
   }
 }
 
