@@ -42,6 +42,10 @@ view: shot {
     sql: ${TABLE}.turn_id ;;
   }
 
+  dimension: combo_count {
+    type: number
+    sql: ${TABLE}.combo_count ;;
+  }
 
   measure: success_count {
     type: sum
