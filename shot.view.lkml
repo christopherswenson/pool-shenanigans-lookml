@@ -42,6 +42,18 @@ view: shot {
     sql: ${TABLE}.turn_id ;;
   }
 
+
+  measure: success_count {
+    type: sum
+    sql: (CASE WHEN ${is_success} = "true" THEN 1 ELSE 0 END) ;;
+  }
+
+  measure: percentage {
+    type: number
+    sql: (${success_count} / ${count}) ;;
+    value_format: "0%"
+  }
+
   measure: count {
     type: count
     drill_fields: [id]
