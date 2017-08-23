@@ -7,6 +7,7 @@ view: ballremaining {
   }
 
   dimension: id {
+    primary_key: yes
     type: string
     sql: ${TABLE}.id ;;
   }
